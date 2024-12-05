@@ -24,6 +24,10 @@ def find_files(suffix: str, path: str) -> list[str]:
     # Initialize a list to store the file paths
     file_paths = []
 
+    # Check if the path exists
+    if not os.path.exists(path):
+        return file_paths
+
     # Iterate over the files and directories in the given path
     for file in os.listdir(path):
         # Create the full path of the file
@@ -54,5 +58,13 @@ if __name__ == "__main__":
     # Test Case 3
     result = find_files(".gitkeep", "./testdir")
     assert result == [os.path.normpath('./testdir/subdir2/.gitkeep'), os.path.normpath('./testdir/subdir4/.gitkeep')], f"Test Case 3 Failed: {result}"
+
+    # Test Case 4: Edge case with empty directory
+    result = find_files(".c", "./testdir/subdir2")
+    assert result == [], f"Test Case 4 Failed: {result}"
+
+    # Test Case 5: Edge case with non-existent root directory
+    result = find_files(".c", "./non_existent_dir")
+    assert result == [], f"Test Case 5 Failed: {result}"
 
     print("All test cases passed!")
