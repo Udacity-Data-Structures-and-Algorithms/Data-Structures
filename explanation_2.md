@@ -10,13 +10,13 @@ The function will use the `os` module in Python to interact with the file system
 
 The function will return a list of all files that end with a given file extension in the directory and its subdirectories.
 
+### Time Complexity:
+    O(n)
+    Time complexity is O(n) because we need to visit every file and directory once to determine if it matches our criteria.
 
-## Time Efficiency:
-
-The time complexity of the function will depend on the number of files and directories in the directory structure. The function will traverse the directory structure recursively, visiting each file and directory once. The time complexity of the function will be O(n), where n is the total number of files and directories in the directory structure.
-
-
-
-## Space Efficiency:
-
-The space complexity of the function will depend on the number of files and directories in the directory structure. The space complexity of the function will be O(n), where n is the total number of files and directories in the directory structure.
+### Space Complexity:
+    O(m + d)
+    Space complexity has two components:
+    - O(m) for storing the matching file paths in the result list
+    - O(d) for the recursion stack, where d is the maximum directory depth Combined as 
+    O(m + d)

@@ -29,24 +29,16 @@ The decoding phase consists of the following steps:
 The efficiency of the code is determined by the time and space complexity of the code. The time complexity of the code is O(n log n), where n is the number of characters in the message. The space complexity of the code is O(n).
 
 
-## Time Efficiency:
+## Time Efficiency & Space Efficiency:
 
-### Encoding:
+### Encoding Process:
 
-1. Calculate the frequency of each character in the message: O(n)
-2. Build and sort a list of tuples from lowest to highest frequencies: O(n log n)
-3. Build the Huffman Tree by assigning a binary code to each letter: O(n log n)
-4. Encode the text into its compressed form: O(n)
+    Time: O(n + k log k) where n is input length and k is unique characters
+    Space: O(n + k) for storing frequencies, tree, codes, and result
 
-### Decoding:
+### Decoding Process:
 
-1. Decode the encoded text: O(n)
-2. Retrieve the encoded text from the Huffman Tree: O(n)
-
-
-## Space Efficiency:
-
-The space efficiency of the code is O(n), where n is the number of characters in the message.
-
+    Time: O(n) where n is the length of encoded data
+    Space: O(n) for storing the decoded result
 
 
